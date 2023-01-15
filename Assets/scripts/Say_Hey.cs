@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Say_Hey : MonoBehaviour
 {
-    AudioSource m_MyAudioSource;
-    // Start is called before the first frame update
+    public AudioSource audioSource;
+    public AudioClip clip;
+    public float volume = 0.5f;
     void Start()
     {
-        m_MyAudioSource = GetComponent<AudioSource>();
-        m_MyAudioSource.Play();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioSource.PlayOneShot(clip, volume);
     }
 }
+
+/*
+ * public class PlayOnCollision : MonoBehaviour
+{
+    public AudioSource audioSource;
+    void OnCollisionEnter(Collision collision)
+    {
+        audioSource.Play();
+    }
+}
+
+*/
